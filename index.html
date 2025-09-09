@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Singh - Hacker Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+        <div class="terminal-controls">
+            <span class="control close"></span>
+            <span class="control minimize"></span>
+            <span class="control maximize"></span>
+        </div>
+        <div class="terminal-title">hackeriron1:~$</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">&lt;/hackeriron1&gt;</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="terminal-prompt">
+                    <span class="prompt-user">aman@hacker:~$</span>
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">_</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Aman Singh</span>
+                    <span class="title-line">Cybersecurity Expert</span>
+                </h1>
+                <p class="hero-description">
+                    Penetration Tester | Bug Bounty Hunter | Security Researcher | Red Team Specialist
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="150">0</span>
+                        <span class="stat-label">Vulnerabilities Found</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Bug Bounties</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="matrix-rain" id="matrix-rain"></div>
+                <div class="hacker-silhouette">
+                    <div class="glitch-text" data-text="HACKER">HACKER</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="terminal-window">
+                        <div class="terminal-header-small">
+                            <span class="terminal-title-small">about_aman.txt</span>
+                        </div>
+                        <div class="terminal-content">
+                            <p class="terminal-line">
+                                <span class="prompt">$</span> whoami
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">Aman Singh - Cybersecurity Professional</span>
+                            </p>
+                            <p class="terminal-line">
+                                <span class="prompt">$</span> cat experience.txt
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">• 5+ years in cybersecurity</span>
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">• Specialized in penetration testing</span>
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">• Bug bounty hunter with 50+ valid reports</span>
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">• Security researcher and vulnerability analyst</span>
+                            </p>
+                            <p class="terminal-line">
+                                <span class="prompt">$</span> cat certifications.txt
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">• OSCP (Offensive Security Certified Professional)</span>
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">• CEH (Certified Ethical Hacker)</span>
+                            </p>
+                            <p class="terminal-line">
+                                <span class="output">• CISSP (Certified Information Systems Security Professional)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <div class="scan-line"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Aman Singh</h3>
+                            <p>Security Researcher</p>
+                            <div class="status-indicator">
+                                <span class="status-dot"></span>
+                                <span>Available for freelance work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                Technical Arsenal
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Security Tools
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Burp Suite</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Nmap</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Metasploit</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Wireshark</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i>
+                        Programming
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Bash/Shell</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C/C++</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-network-wired"></i>
+                        Networking
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">TCP/IP</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Network Security</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firewall Config</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">VPN Technologies</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i>
+                        Web Security
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">OWASP Top 10</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL Injection</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">XSS Testing</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CSRF Protection</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                Exploits & Projects
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Web App Penetration Testing</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Comprehensive security assessment of web applications including vulnerability scanning, manual testing, and exploitation of common web vulnerabilities.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Burp Suite</span>
+                        <span class="tech-tag">OWASP ZAP</span>
+                        <span class="tech-tag">SQLMap</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Network Security Scanner</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Custom network scanning tool built in Python for automated vulnerability detection and network reconnaissance.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Nmap</span>
+                        <span class="tech-tag">Scapy</span>
+                        <span class="tech-tag">Threading</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Bug Bounty Automation</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Automated reconnaissance and vulnerability scanning scripts for bug bounty programs and security research.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Bash</span>
+                        <span class="tech-tag">Subfinder</span>
+                        <span class="tech-tag">Nuclei</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Malware Analysis Lab</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Isolated environment for malware analysis with automated sandboxing and behavioral analysis tools.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">VirtualBox</span>
+                        <span class="tech-tag">Cuckoo Sandbox</span>
+                        <span class="tech-tag">YARA</span>
+                        <span class="tech-tag">Volatility</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Social Engineering Toolkit</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Custom social engineering assessment tools for phishing simulation and security awareness training.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">SMTP</span>
+                        <span class="tech-tag">HTML</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Cryptographic Tools</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Collection of cryptographic utilities for encryption, decryption, and hash analysis in security assessments.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenSSL</span>
+                        <span class="tech-tag">Hashcat</span>
+                        <span class="tech-tag">John the Ripper</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
+                Certifications & Achievements
+            </h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>OSCP</h3>
+                        <p class="cert-name">Offensive Security Certified Professional</p>
+                        <p class="cert-issuer">Offensive Security</p>
+                        <p class="cert-date">2023</p>
+                        <div class="cert-badge">
+                            <span class="badge-text">Validated</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>CEH</h3>
+                        <p class="cert-name">Certified Ethical Hacker</p>
+                        <p class="cert-issuer">EC-Council</p>
+                        <p class="cert-date">2022</p>
+                        <div class="cert-badge">
+                            <span class="badge-text">Validated</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>CISSP</h3>
+                        <p class="cert-name">Certified Information Systems Security Professional</p>
+                        <p class="cert-issuer">(ISC)²</p>
+                        <p class="cert-date">2023</p>
+                        <div class="cert-badge">
+                            <span class="badge-text">Validated</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>CCNA Security</h3>
+                        <p class="cert-name">Cisco Certified Network Associate Security</p>
+                        <p class="cert-issuer">Cisco</p>
+                        <p class="cert-date">2022</p>
+                        <div class="cert-badge">
+                            <span class="badge-text">Validated</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>AWS Security</h3>
+                        <p class="cert-name">AWS Certified Security - Specialty</p>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <p class="cert-date">2023</p>
+                        <div class="cert-badge">
+                            <span class="badge-text">Validated</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>GWAPT</h3>
+                        <p class="cert-name">GIAC Web Application Penetration Tester</p>
+                        <p class="cert-issuer">SANS/GIAC</p>
+                        <p class="cert-date">2023</p>
+                        <div class="cert-badge">
+                            <span class="badge-text">Validated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05.</span>
+                Professional Journey
+            </h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h3>Senior Security Consultant</h3>
+                        <h4>CyberDefense Solutions</h4>
+                        <p>Leading red team operations and conducting advanced penetration testing for Fortune 500 companies. Specializing in cloud security assessments and zero-day vulnerability research.</p>
+                        <ul class="timeline-achievements">
+                            <li>Led 25+ successful red team engagements</li>
+                            <li>Discovered 3 zero-day vulnerabilities</li>
+                            <li>Mentored junior security analysts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <h3>Penetration Tester</h3>
+                        <h4>SecureTech Inc.</h4>
+                        <p>Conducted comprehensive security assessments including web applications, network infrastructure, and mobile applications. Specialized in social engineering and physical security testing.</p>
+                        <ul class="timeline-achievements">
+                            <li>Completed 100+ penetration tests</li>
+                            <li>Found 200+ critical vulnerabilities</li>
+                            <li>Developed custom exploitation tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - 2022</div>
+                        <h3>Security Analyst</h3>
+                        <h4>InfoSec Corp</h4>
+                        <p>Performed vulnerability assessments, security monitoring, and incident response. Gained expertise in SIEM tools and threat hunting methodologies.</p>
+                        <ul class="timeline-achievements">
+                            <li>Reduced false positives by 60%</li>
+                            <li>Implemented automated threat detection</li>
+                            <li>Contributed to security tool development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2021</div>
+                        <h3>Junior Security Engineer</h3>
+                        <h4>TechGuard Systems</h4>
+                        <p>Started career in cybersecurity focusing on network security, firewall management, and security policy implementation. Gained foundational knowledge in various security domains.</p>
+                        <ul class="timeline-achievements">
+                            <li>Implemented security policies</li>
+                            <li>Managed enterprise firewalls</li>
+                            <li>Completed first penetration test</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06.</span>
+                Security Insights
+            </h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-category">Web Security</div>
+                        <div class="blog-date">Dec 15, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Advanced SQL Injection Techniques</h3>
+                        <p>Exploring modern SQL injection methods including blind, time-based, and union-based attacks. Learn how to identify and exploit these vulnerabilities in real-world scenarios.</p>
+                        <div class="blog-meta">
+                            <span class="blog-tag">SQL Injection</span>
+                            <span class="blog-tag">Web Security</span>
+                            <span class="blog-tag">Penetration Testing</span>
+                        </div>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-category">Red Team</div>
+                        <div class="blog-date">Dec 10, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Building Custom C2 Frameworks</h3>
+                        <p>A deep dive into creating custom command and control frameworks for red team operations. From basic HTTP C2 to advanced evasion techniques.</p>
+                        <div class="blog-meta">
+                            <span class="blog-tag">Red Team</span>
+                            <span class="blog-tag">C2 Framework</span>
+                            <span class="blog-tag">Python</span>
+                        </div>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-category">Bug Bounty</div>
+                        <div class="blog-date">Dec 5, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Bug Bounty Methodology</h3>
+                        <p>My systematic approach to bug bounty hunting, from reconnaissance to exploitation. Tips and tricks for finding high-value vulnerabilities.</p>
+                        <div class="blog-meta">
+                            <span class="blog-tag">Bug Bounty</span>
+                            <span class="blog-tag">Methodology</span>
+                            <span class="blog-tag">Reconnaissance</span>
+                        </div>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-category">Cloud Security</div>
+                        <div class="blog-date">Nov 28, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AWS Security Misconfigurations</h3>
+                        <p>Common AWS security misconfigurations that lead to data breaches. Learn how to identify and remediate these issues in your cloud infrastructure.</p>
+                        <div class="blog-meta">
+                            <span class="blog-tag">AWS</span>
+                            <span class="blog-tag">Cloud Security</span>
+                            <span class="blog-tag">Misconfiguration</span>
+                        </div>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-category">Malware Analysis</div>
+                        <div class="blog-date">Nov 20, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Static vs Dynamic Malware Analysis</h3>
+                        <p>Comparing static and dynamic analysis techniques for malware research. When to use each approach and how to set up your analysis environment.</p>
+                        <div class="blog-meta">
+                            <span class="blog-tag">Malware Analysis</span>
+                            <span class="blog-tag">Reverse Engineering</span>
+                            <span class="blog-tag">Sandboxing</span>
+                        </div>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-category">Network Security</div>
+                        <div class="blog-date">Nov 15, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Network Segmentation Best Practices</h3>
+                        <p>Implementing effective network segmentation to limit lateral movement during security incidents. Design patterns and implementation strategies.</p>
+                        <div class="blog-meta">
+                            <span class="blog-tag">Network Security</span>
+                            <span class="blog-tag">Segmentation</span>
+                            <span class="blog-tag">Zero Trust</span>
+                        </div>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">07.</span>
+                Client Testimonials
+            </h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Aman's expertise in penetration testing helped us identify critical vulnerabilities that could have led to a major data breach. His detailed reports and remediation guidance were invaluable."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CTO, TechCorp Solutions</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Working with Aman on our red team engagement was exceptional. His creative approach to social engineering and his ability to think like an attacker gave us insights we never expected."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Security Director, GlobalBank</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Aman's bug bounty methodology and tools helped us improve our security posture significantly. His findings were always well-documented and actionable."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <p>Head of Security, StartupXYZ</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">08.</span>
+                Get In Touch
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>aman.singh@hacker.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <p>github.com/aman-hacker</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/aman-singh-hacker</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Twitter</h3>
+                            <p>@aman_hacker</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form class="hacker-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <span class="logo-text">&lt;/aman&gt;</span>
+                        </div>
+                        <p class="footer-tagline">Cybersecurity Expert & Ethical Hacker</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#skills">Skills</a></li>
+                                <li><a href="#projects">Projects</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Services</h4>
+                            <ul>
+                                <li><a href="#certifications">Certifications</a></li>
+                                <li><a href="#timeline">Experience</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Connect</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-link" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2025 Aman Singh. All rights reserved.</p>
+                    </div>
+                    <div class="footer-credit">
+                        <p>Designed & Developed by <a href="https://teamtechpro.netlify.app" target="_blank" rel="noopener noreferrer" class="techpro-link">Team TechPro</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
