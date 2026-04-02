@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollToTop();
 });
 
+// ── Global anchor smooth scroll (for all in-page links) ──────
+document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    // Skip if it's already handled by nav (has nav-link class)
+    if (anchor.classList.contains('nav-link')) return;
+    const targetId = anchor.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    e.preventDefault();
+    const offsetTop = target.getBoundingClientRect().top + window.scrollY - 115;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+});
+
 // ── Typing Animation ──────────────────────────────────────────
 function initTypingAnimation() {
     const typingElement = document.getElementById('typing-text');
@@ -90,7 +104,7 @@ function initNavigation() {
             e.preventDefault();
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 120;
+                const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY - 115;
                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
         });
@@ -115,7 +129,8 @@ function initNavigation() {
 
 // ── Scroll Animations ─────────────────────────────────────────
 function initScrollAnimations() {
-    const observer = new IntersectionObserver(function (entries) {
+    // Legacy fade-in observer (kept for .fade-in elements)
+    const legacyObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
@@ -124,8 +139,88 @@ function initScrollAnimations() {
     document.querySelectorAll('.skill-category, .cert-card, .contact-item, .about-content > *')
         .forEach(el => {
             el.classList.add('fade-in');
-            observer.observe(el);
+            legacyObserver.observe(el);
         });
+
+    // New .anim observer
+    const animObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                animObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    // Section titles
+    document.querySelectorAll('.section-title').forEach(el => {
+        el.classList.add('anim', 'anim--left');
+        animObserver.observe(el);
+    });
+
+    // Skill categories with stagger
+    document.querySelectorAll('.skills-grid .skill-category').forEach((el, i) => {
+        el.classList.add('anim', 'anim--up', `anim-d${Math.min(i % 4 + 1, 6)}`);
+        animObserver.observe(el);
+    });
+
+    // Cert cards with stagger
+    document.querySelectorAll('.cert-card').forEach((el, i) => {
+        el.classList.add('anim', 'anim--up', `anim-d${Math.min(i % 3 + 1, 6)}`);
+        animObserver.observe(el);
+    });
+
+    // HOF items
+    document.querySelectorAll('.hof-grid .skill-category').forEach((el, i) => {
+        el.classList.add('anim', 'anim--zoom', `anim-d${Math.min(i % 5 + 1, 6)}`);
+        animObserver.observe(el);
+    });
+
+    // Timeline items
+    document.querySelectorAll('.timeline-item').forEach((el, i) => {
+        el.classList.add('anim', i % 2 === 0 ? 'anim--left' : 'anim--right');
+        animObserver.observe(el);
+    });
+
+    // Contact items
+    document.querySelectorAll('.contact-item').forEach((el, i) => {
+        el.classList.add('anim', 'anim--left', `anim-d${Math.min(i + 1, 6)}`);
+        animObserver.observe(el);
+    });
+
+    // Contact form
+    const form = document.querySelector('.hacker-form');
+    if (form) {
+        form.classList.add('anim', 'anim--right');
+        animObserver.observe(form);
+    }
+
+    // Profile card
+    const profileCard = document.querySelector('.profile-card');
+    if (profileCard) {
+        profileCard.classList.add('anim', 'anim--zoom');
+        animObserver.observe(profileCard);
+    }
+
+    // Terminal window
+    const terminal = document.querySelector('.terminal-window');
+    if (terminal) {
+        terminal.classList.add('anim', 'anim--left');
+        animObserver.observe(terminal);
+    }
+
+    // Testimonials
+    document.querySelectorAll('.testimonials-slider').forEach(el => {
+        el.classList.add('anim', 'anim--up');
+        animObserver.observe(el);
+    });
+
+    // Footer brand
+    const footerBrand = document.querySelector('.footer-brand');
+    if (footerBrand) {
+        footerBrand.classList.add('anim', 'anim--left');
+        animObserver.observe(footerBrand);
+    }
 }
 
 // ── Matrix Rain ───────────────────────────────────────────────
@@ -412,26 +507,8 @@ function initTestimonialSlider() {
     setInterval(() => { current = (current + 1) % cards.length; show(current); }, 5000);
 }
 
-// ── Timeline Animations ───────────────────────────────────────
-function initTimelineAnimations() {
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry, index) => {
-            if (!entry.isIntersecting) return;
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateX(0)';
-            }, index * 200);
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.timeline-item').forEach((item, i) => {
-        item.style.opacity = '0';
-        item.style.transform = i % 2 === 0 ? 'translateX(-40px)' : 'translateX(40px)';
-        item.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-        observer.observe(item);
-    });
-}
+// ── Timeline Animations — handled in initScrollAnimations ─────
+function initTimelineAnimations() {}
 
 // ── Scroll To Top ─────────────────────────────────────────────
 function initScrollToTop() {

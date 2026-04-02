@@ -48,6 +48,11 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Offset for fixed terminal header (50px) + navbar (60px) */
+section[id] {
+    scroll-margin-top: 115px;
+}
+
 body {
     font-family: var(--font-mono);
     background: var(--primary-bg);
@@ -527,14 +532,20 @@ section {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: linear-gradient(45deg, var(--neon-green), var(--neon-blue));
     margin: 0 auto 20px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: var(--primary-bg);
+    overflow: hidden;
+    border: 3px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 50%;
 }
 
 .scan-line {
@@ -545,6 +556,8 @@ section {
     height: 2px;
     background: var(--neon-green);
     animation: scan 2s linear infinite;
+    z-index: 2;
+    opacity: 0.7;
 }
 
 @keyframes scan {
@@ -2306,4 +2319,181 @@ img, video, canvas, svg {
     color: var(--text-secondary);
     margin-bottom: 30px;
     line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════
+   ENTRANCE ANIMATIONS
+═══════════════════════════════════════ */
+
+/* Base keyframes */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 10px var(--neon-green), 0 0 30px var(--neon-green);
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        opacity: 0.7;
+    }
+}
+
+@keyframes borderGlow {
+    0%, 100% { box-shadow: 0 0 5px rgba(0,255,65,0.2); }
+    50%       { box-shadow: 0 0 20px rgba(0,255,65,0.5), 0 0 40px rgba(0,255,65,0.2); }
+}
+
+@keyframes typewriterCaret {
+    0%, 100% { border-right-color: var(--neon-green); }
+    50%       { border-right-color: transparent; }
+}
+
+/* ── Scroll-triggered base class ── */
+.anim {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.anim.anim--up     { transform: translateY(40px); }
+.anim.anim--down   { transform: translateY(-30px); }
+.anim.anim--left   { transform: translateX(-50px); }
+.anim.anim--right  { transform: translateX(50px); }
+.anim.anim--zoom   { transform: scale(0.88); }
+
+.anim.in-view {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Stagger delays */
+.anim-d1 { transition-delay: 0.1s; }
+.anim-d2 { transition-delay: 0.2s; }
+.anim-d3 { transition-delay: 0.3s; }
+.anim-d4 { transition-delay: 0.4s; }
+.anim-d5 { transition-delay: 0.5s; }
+.anim-d6 { transition-delay: 0.6s; }
+
+/* ── Hero ── */
+.terminal-prompt  { animation: fadeDown 0.7s ease 0.2s both; }
+.hero-title       { animation: fadeUp   0.8s ease 0.4s both; }
+.hero-description { animation: fadeUp   0.7s ease 0.6s both; }
+.hero-stats       { animation: fadeUp   0.7s ease 0.75s both; }
+.hero-buttons     { animation: fadeUp   0.7s ease 0.9s both; }
+.hero-visual      { animation: fadeRight 0.9s ease 0.5s both; }
+
+/* ── Navbar ── */
+.terminal-header  { animation: fadeDown 0.5s ease both; }
+.navbar           { animation: fadeDown 0.6s ease 0.1s both; }
+
+/* ── Section titles ── */
+.section-title {
+    animation: none; /* handled by JS observer */
+}
+
+/* ── Profile card ── */
+.profile-card {
+    animation: zoomIn 0.7s ease both;
+}
+
+/* ── Skill categories — stagger via JS ── */
+.skill-category {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, opacity 0.6s ease;
+}
+
+/* ── Cert cards ── */
+.cert-card {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, opacity 0.6s ease;
+}
+
+/* ── Hall of Fame items ── */
+.hof-grid .skill-category {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.4s ease, opacity 0.5s ease;
+}
+
+/* ── Timeline ── */
+.timeline-content {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* ── Contact items ── */
+.contact-item {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ── Neon flicker on logo ── */
+.nav-logo .logo-text {
+    animation: neonFlicker 6s ease-in-out 2s infinite;
+}
+
+/* ── Glow pulse on profile image ── */
+.profile-image {
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* ── Stat numbers glow on count ── */
+.stat-number {
+    transition: text-shadow 0.3s ease;
+}
+
+/* ── Button hover lift ── */
+.btn {
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ── Nav link active indicator ── */
+.nav-link.active {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-green);
+}
+
+/* ── Cert card hover lift ── */
+.cert-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ── HOF card hover ── */
+.hof-grid .skill-category:hover {
+    transform: translateY(-4px) scale(1.04);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 20px rgba(0,255,65,0.15);
+}
+
+/* ── Reduce motion for accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
